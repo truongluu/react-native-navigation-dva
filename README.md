@@ -1,10 +1,10 @@
 <img src="https://i.postimg.cc/G2DNR52v/RNN-Starter.png" width="100%" title="Logo">
 
 -----
-Simple yet practical starter with [React Native Navigation v6](https://github.com/wix/react-native-navigation), [MobX-State-Tree](https://github.com/mobxjs/mobx-state-tree) and [Redux](https://github.com/reduxjs/redux) (pick one) and more goodies inside.
+Simple yet practical starter with [React Native Navigation v6](https://github.com/wix/react-native-navigation), and [Redux](https://github.com/reduxjs/redux) (pick one) and more goodies inside.
 
 It is a basic Reddit App implementation (list of subreddits and news only) where the main goal to achieve was usage of functional components with React Native Navigation. So no more ~~`class MyComponent extends React.Component { ... }`~~, only functions with [React Hooks](https://reactjs.org/docs/hooks-intro.html) and native navigation.
-The app logic is written in two ways: using [MobX-State-Tree](https://github.com/mobxjs/mobx-state-tree) in `/srcMobX` folder and using [Redux](https://github.com/reduxjs/redux) with hooks in `/srcRedux` folder. You can find instructions for launching the app using one or another way in `index.js` file.
+The app logic is written in one way: using [Redux](https://github.com/reduxjs/redux) with hooks in `/srcRedux` folder. You can find instructions for launching the app using one or another way in `index.js` file.
 So now you are free to choose any option you love and stick with it!
 
 -----
@@ -17,12 +17,12 @@ So now you are free to choose any option you love and stick with it!
 
 ##### and pick your favourite state management tool (examples inside)
 
-| MOBX | REDUX |
-| :---: | :---: |
-| [MobX](https://github.com/mobxjs/mobx) - simple, scalable state management | [Redux](https://github.com/reduxjs/redux) - a predictable state container  |
-| [MobX React](https://github.com/mobxjs/mobx-react) - official React bindings for MobX | [React Redux](https://github.com/reduxjs/react-redux) - official React bindings for Redux  |
-| [MobX State Tree (MST)](https://github.com/mobxjs/mobx-state-tree) - opinionated, transactional, MobX powered state container | [Redux Saga](https://github.com/redux-saga/redux-saga) - side effect model for Redux apps |
-| [Persistence](https://github.com/kanzitelli/react-native-navigation-starter/blob/master/srcMobX/store/redditStore.ts#L130) and [Hydration](https://github.com/kanzitelli/react-native-navigation-starter/blob/master/srcMobX/store/redditStore.ts#L97) are done by our hands | [Redux Persist](https://github.com/rt2zz/redux-persist) - persist and rehydrate a Redux store |
+| REDUX |
+| :---: |
+| [Redux](https://github.com/reduxjs/redux) - a predictable state container
+|  [React Redux](https://github.com/reduxjs/react-redux) - official React bindings for Redux  |
+| [Redux Saga](https://github.com/redux-saga/redux-saga) - side effect model for Redux apps |
+|  [Redux Persist](https://github.com/rt2zz/redux-persist) - persist and rehydrate a Redux store |
 
 -----
 
@@ -30,7 +30,7 @@ So now you are free to choose any option you love and stick with it!
 
 1. Clone the repo
 ```bash
-git clone https://github.com/kanzitelli/react-native-navigation-starter.git new-project
+git clone https://github.com/truongluu/react-native-navigation-dva.git new-project
 ```
 
 2. Install packages
