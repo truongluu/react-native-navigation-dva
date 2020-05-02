@@ -1,4 +1,11 @@
 import React, { useCallback } from 'react';
+import { Navigation } from 'react-native-navigation';
+import { useNavigationButtonPress } from 'react-native-navigation-hooks';
+import { connect } from 'react-redux';
+import Item from '../components/listItem';
+import SubredditInput from '../components/subredditInput';
+import { LAND } from '../screens';
+import { selectSubreddit } from '../store/selectedSubreddit/actions';
 import {
     SafeAreaView,
     FlatList,
@@ -7,42 +14,33 @@ import {
     Platform,
     Alert,
 } from 'react-native';
-import { Navigation } from 'react-native-navigation';
-import { useNavigationButtonPress } from 'react-native-navigation-hooks';
-import { useSelector, useDispatch } from 'react-redux';
 
-import { selectSubreddit } from '../store/selectedSubreddit/actions';
-import { addSubreddit, deleteSubreddit } from '../store/subreddits/actions';
 
-import { LAND } from '../screens';
-import Item from '../components/listItem';
-import SubredditInput from '../components/subredditInput';
 
-const Home: HomeComponentType = ({
+const Home = ({
     componentId,
-}): JSX.Element => {
-    // Redux Hooks
-    // ===========
-    // selectors
-    const subreddits = useSelector((s: GlobalState) => s.subreddits);
-
-    // actions
-    const dispatch = useDispatch();
+    subeddits,
+    dispatch
+}) => {
+    console.log('subeddits', subeddits)
     const onSelectSubreddit = useCallback(
-        (sr: string) => dispatch(selectSubreddit(sr)),
+        (sr) => dispatch(selectSubreddit(sr)),
         [dispatch],
     );
     const onDeleteSubreddit = useCallback(
-        (sr: string) => dispatch(deleteSubreddit(sr)),
+        (sr) => dispatch(deleteSubreddit(sr)),
         [dispatch],
     );
     const onAddSubreddit = useCallback(
-        (sr: string) => dispatch(addSubreddit(sr)),
+        (sr) => dispatch({
+            type: 'subeddits/addSubReddit',
+            subreddit: sr
+        }),
         [dispatch],
     );
     // ===========
 
-    const listRef = React.useRef<FlatList<SubredditInfo>>(null);
+    const listRef = React.useRef(null);
     const [keyboardVerticalOffset, setKeyboardVerticalOffset] = React.useState(0);
 
     // equivalent to componentDidMount
@@ -72,8 +70,8 @@ const Home: HomeComponentType = ({
         }
     };
 
-    const onItemPressed = (subreddit: string) => {
-        onSelectSubreddit(subreddit);
+    const onItemPressed = (subreddit) => {
+        // onSelectSubreddit(subreddit);
 
         Navigation.push(componentId, {
             component: {
@@ -85,7 +83,7 @@ const Home: HomeComponentType = ({
         });
     };
 
-    const onItemLongPressed = (subreddit: string) => {
+    const onItemLongPressed = (subreddit) => {
         Alert.alert(
             'Action required',
             `Would you like to delete ${subreddit} subreddit?`,
@@ -99,7 +97,7 @@ const Home: HomeComponentType = ({
         );
     };
 
-    const onAddSubredditPressed = (subreddit: string) => {
+    const onAddSubredditPressed = (subreddit) => {
         onAddSubreddit(subreddit);
     };
 
@@ -118,7 +116,9 @@ const Home: HomeComponentType = ({
                     ref={listRef}
                     onContentSizeChange={listScrollToBottom}
                     onLayout={listScrollToBottom}
-                    data={subreddits}
+                    refreshControl
+                    refreshing={true}
+                    data={subeddits}
                     keyExtractor={(item) => item.title }
                     renderItem={({ item }) =>
                         <Item
@@ -139,7 +139,9 @@ const Home: HomeComponentType = ({
     );
 };
 
-Home.options = () => ({
+const HomeConnect = connect(({subeddits}) => ({subeddits: subeddits.list }))(Home);
+
+HomeConnect.options = () => ({
     topBar: {
         visible: true,
         title: {
@@ -152,4 +154,4 @@ Home.options = () => ({
     },
 });
 
-export default Home;
+export default HomeConnect;

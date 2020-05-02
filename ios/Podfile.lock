@@ -217,13 +217,13 @@ PODS:
     - React-cxxreact (= 0.61.5)
     - React-jsi (= 0.61.5)
     - ReactCommon/jscallinvoker (= 0.61.5)
-  - ReactNativeNavigation (6.0.0):
+  - ReactNativeNavigation (6.5.0):
     - React
     - React-RCTImage
     - React-RCTText
-  - RNCAsyncStorage (1.8.0):
+  - RNCAsyncStorage (1.9.0):
     - React
-  - RNGestureHandler (1.6.0):
+  - RNGestureHandler (1.6.1):
     - React
   - RNVectorIcons (6.6.0):
     - React
@@ -353,12 +353,12 @@ SPEC CHECKSUMS:
   React-RCTText: 9ccc88273e9a3aacff5094d2175a605efa854dbe
   React-RCTVibration: a49a1f42bf8f5acf1c3e297097517c6b3af377ad
   ReactCommon: 198c7c8d3591f975e5431bec1b0b3b581aa1c5dd
-  ReactNativeNavigation: 3539767af785cd7c40a5980d237623d1f298f279
-  RNCAsyncStorage: 455b48eb552543bad4e3099e180e1700700771f3
-  RNGestureHandler: dde546180bf24af0b5f737c8ad04b6f3fa51609a
+  ReactNativeNavigation: 591e44266ee7047948ac18e47a8f283e657be5a8
+  RNCAsyncStorage: 453cd7c335ec9ba3b877e27d02238956b76f3268
+  RNGestureHandler: 8f09cd560f8d533eb36da5a6c5a843af9f056b38
   RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
   Yoga: f2a7cd4280bfe2cca5a7aed98ba0eb3d1310f18b
 
 PODFILE CHECKSUM: 66f6d14c04a1a3aa8929d13c1d3acb6e19c5e690
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.1

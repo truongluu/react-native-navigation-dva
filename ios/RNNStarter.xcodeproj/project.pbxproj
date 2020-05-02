@@ -20,6 +20,7 @@
 		69B412F4C9A41BD8B4D2626A /* libPods-RNNStarterTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF2C6C430F94974CCBDE11C6 /* libPods-RNNStarterTests.a */; };
 		6E79E3F48D2DE51F9E19709D /* libPods-RNNStarter-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A801B5B84AC45E9AD8F87F /* libPods-RNNStarter-tvOS.a */; };
 		934D3E62EFD93A4851F11168 /* libPods-RNNStarter-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C9CEF497988E7ACA4CBBC9 /* libPods-RNNStarter-tvOSTests.a */; };
+		CCD70C1C245D9B0800C5F625 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = CCD70C1B245D9B0800C5F625 /* main.jsbundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,10 +38,23 @@
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
 			remoteInfo = "RNNStarter-tvOS";
 		};
+		CC4BFFFB24593CF800AF7B19 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CC4BFFF624593CF800AF7B19 /* RNVectorIcons.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5DBEB1501B18CEA900B34395;
+			remoteInfo = RNVectorIcons;
+		};
+		CC4BFFFD24593CF800AF7B19 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CC4BFFF624593CF800AF7B19 /* RNVectorIcons.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A39873CE1EA65EE60051E01A;
+			remoteInfo = "RNVectorIcons-tvOS";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		00E356EE1AD99517003FC87E /* RNNStarterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RNNStarterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* RNNStarterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNNStarterTests.m; sourceTree = "<group>"; };
@@ -64,6 +78,8 @@
 		AF2C6C430F94974CCBDE11C6 /* libPods-RNNStarterTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNNStarterTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B052F5440B2FE7FE2B55D4E2 /* Pods-RNNStarterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNNStarterTests.debug.xcconfig"; path = "Target Support Files/Pods-RNNStarterTests/Pods-RNNStarterTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B5C9CEF497988E7ACA4CBBC9 /* libPods-RNNStarter-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNNStarter-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC4BFFF624593CF800AF7B19 /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
+		CCD70C1B245D9B0800C5F625 /* main.jsbundle */ = {isa = PBXFileReference; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		CE42717DCB2F7121D850905B /* Pods-RNNStarterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNNStarterTests.release.xcconfig"; path = "Target Support Files/Pods-RNNStarterTests/Pods-RNNStarterTests.release.xcconfig"; sourceTree = "<group>"; };
 		D2874551E0A09B6D012DEE78 /* Pods-RNNStarter-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNNStarter-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-RNNStarter-tvOSTests/Pods-RNNStarter-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -126,7 +142,7 @@
 		13B07FAE1A68108700A75B9A /* RNNStarter */ = {
 			isa = PBXGroup;
 			children = (
-				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
+				CCD70C1B245D9B0800C5F625 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -169,6 +185,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				CC4BFFF624593CF800AF7B19 /* RNVectorIcons.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -195,6 +212,15 @@
 				00E356EE1AD99517003FC87E /* RNNStarterTests.xctest */,
 				2D02E47B1E0B4A5D006451C7 /* RNNStarter-tvOS.app */,
 				2D02E4901E0B4A5D006451C7 /* RNNStarter-tvOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CC4BFFF724593CF800AF7B19 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CC4BFFFC24593CF800AF7B19 /* libRNVectorIcons.a */,
+				CC4BFFFE24593CF800AF7B19 /* libRNVectorIcons-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -321,6 +347,12 @@
 			mainGroup = 83CBB9F61A601CBA00E9B192;
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CC4BFFF724593CF800AF7B19 /* Products */;
+					ProjectRef = CC4BFFF624593CF800AF7B19 /* RNVectorIcons.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				13B07F861A680F5B00A75B9A /* RNNStarter */,
@@ -330,6 +362,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		CC4BFFFC24593CF800AF7B19 /* libRNVectorIcons.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNVectorIcons.a;
+			remoteRef = CC4BFFFB24593CF800AF7B19 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CC4BFFFE24593CF800AF7B19 /* libRNVectorIcons-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRNVectorIcons-tvOS.a";
+			remoteRef = CC4BFFFD24593CF800AF7B19 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		00E356EC1AD99517003FC87E /* Resources */ = {
@@ -343,6 +392,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCD70C1C245D9B0800C5F625 /* main.jsbundle in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);

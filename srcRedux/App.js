@@ -1,27 +1,36 @@
-import { Navigation } from 'react-native-navigation';
+import React from 'react';
 import { gestureHandlerRootHOC } from 'react-native-gesture-handler';
+import { Navigation } from 'react-native-navigation';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-
-import { HOME, LAND, EMPTY } from './screens';
-
-import HomeScreen from './screens/Home';
-import LandScreen from './screens/Land';
+import productModel from './models/product';
+import subRedditModel from './models/subreddit';
+import { EMPTY, HOME } from './screens';
 import EmptyScreen from './screens/Empty';
+import HomeScreen from './screens/Home';
+import dva from './utils/dva';
 
-import { withReduxProvider } from './store';
 
-const Screens = new Map<string, React.FC<any>>();
+const app = dva({
+    initialState: {},
+    models: [
+      productModel,
+      subRedditModel
+    ],
+    onError(e) {
+      console.log('onError', e)
+    },
+  });
 
-Screens.set(HOME, HomeScreen);
-Screens.set(LAND, LandScreen);
-Screens.set(EMPTY, EmptyScreen);
+const Screens = new Map();
+
+Screens.set(HOME, app.start(<HomeScreen />));
+Screens.set(EMPTY, app.start(<EmptyScreen />));
 
 // Register screens
 Screens.forEach((C, key) => {
     Navigation.registerComponent(
         key,
-        () => gestureHandlerRootHOC(withReduxProvider(C)),
-        () => C,
+        () => gestureHandlerRootHOC(C),
     );
 });
 

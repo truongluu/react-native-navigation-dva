@@ -1,25 +1,20 @@
 import React from 'react';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 import {
     SafeAreaView,
     Text,
     StyleSheet,
+    Button,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome5';
-import { useSelector } from 'react-redux';
+import { connect } from 'react-redux';
 
-const Empty: EmptyComponentType = (): JSX.Element => {
-    // Redux Hooks
-    // ===========
-    // selectors
-    const selectedSubreddit = useSelector((s: GlobalState) => s.selectedSubreddit);
-
-    // actions
-    // ===========
+const Empty = ({ dispatch, product: { counter } }) => {
 
     return (
         <SafeAreaView style={styles.container}>
             <Text style={styles.text}>Just an Empty Screen 🤷‍♂️</Text>
-            <Text style={styles.text}>Selected subreddit: {selectedSubreddit}</Text>
+            <Text style={styles.text}>Selected subreddit {counter}</Text>
+            <Button onPress={() => dispatch({type: 'product/incr'})} title="Incr" />
             <Icon name={'react'} size={100} />
         </SafeAreaView>
     );
@@ -38,4 +33,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Empty;
+export default connect(({ product }) => ({ product }))(Empty);

@@ -1,5 +1,6 @@
 interface NavigationComponentProps {
     componentId: string;
+    dispatch: Function;
 }
 interface NavigationComponentOptions {
     options?: (passProps?: Record<string, any>) => object;
