@@ -17,8 +17,17 @@ export default function(options) {
   app.start()
   // eslint-disable-next-line no-underscore-dangle
   const store = app._store
-  app.start = container => () => {
-    return <Provider store={store}>{container}</Provider>
+  app.start = Component => {
+    return function inject(props) {
+      const EnhancedComponent = () => (
+        <Provider store={store}>
+          <Component {...props} />
+        </Provider>
+      );
+  
+      return <EnhancedComponent />;
+    };
+    
   } 
   app.getStore = () => store
 

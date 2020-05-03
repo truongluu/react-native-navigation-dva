@@ -23,8 +23,8 @@ const app = dva({
 
 const Screens = new Map();
 
-Screens.set(HOME, app.start(<HomeScreen />));
-Screens.set(EMPTY, app.start(<EmptyScreen />));
+Screens.set(HOME, app.start(HomeScreen));
+Screens.set(EMPTY, app.start(EmptyScreen));
 
 // Register screens
 Screens.forEach((C, key) => {
