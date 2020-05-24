@@ -18,16 +18,15 @@ export default function(options) {
   // eslint-disable-next-line no-underscore-dangle
   const store = app._store
   app.start = Component => {
-    return function inject(props) {
-      const EnhancedComponent = () => (
+    const WrapperComponent = (props) => {
+      return (
         <Provider store={store}>
           <Component {...props} />
         </Provider>
       );
-  
-      return <EnhancedComponent />;
     };
-    
+    WrapperComponent.options = Component.options || {};
+    return WrapperComponent;
   } 
   app.getStore = () => store
 

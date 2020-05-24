@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import Item from '../components/listItem';
 import SubredditInput from '../components/subredditInput';
 import { LAND } from '../screens';
-import { selectSubreddit } from '../store/selectedSubreddit/actions';
 import {
     SafeAreaView,
     FlatList,

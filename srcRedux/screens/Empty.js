@@ -20,6 +20,19 @@ const Empty = ({ dispatch, product: { counter } }) => {
     );
 };
 
+Empty.options = {
+    topBar: {
+        visible: true,
+        title: {
+            text: 'Redux App 1',
+        },
+        rightButtons: [{
+            id: 'hi_button_id',
+            text: 'Hi',
+        }],
+    },
+}
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
