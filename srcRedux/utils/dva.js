@@ -25,6 +25,7 @@ export default function(options) {
         </Provider>
       );
     };
+    // Copy options from Component
     WrapperComponent.options = Component.options || {};
     return WrapperComponent;
   } 
